@@ -16,6 +16,6 @@ class Solution:
 
     def categorical_cross_entropy(self, y_true: NDArray[np.float64], y_pred: NDArray[np.float64]) -> float:
         epsilon = 1e-7
-        y_pred = np.clip(y_pred, epsilon, 1 - epsilon)
-        loss = -np.mean(np.sum(y_true * np.log(y_pred), axis=1))
+        y_pred = np.clip(y_pred, epsilon, 1-epsilon)
+        loss = -np.mean(np.sum(y_true * np.log(y_pred), axis = 1))
         return round(loss, 4)
