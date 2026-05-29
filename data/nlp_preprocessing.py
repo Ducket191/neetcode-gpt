@@ -19,6 +19,6 @@ class Solution:
         encoded = []
         for sentence in combine:
             sentence_ids = [word_to_id[w] for w in sentence.split()]
-            encoded.append(torch.tensor(sentence_ids, dtype=torch.float32))
+            encoded.append(torch.tensor(sentence_ids))
 
         return nn.utils.rnn.pad_sequence(encoded, batch_first=True)
